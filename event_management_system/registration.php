@@ -122,7 +122,9 @@ if (isset($_POST['submit'])) {
           <div class="row">
             <!-- /.col -->
             <div class="col-4">
-              <button type="submit" name="submit" class="btn btn-primary btn-block">Register</button>
+              <a href="login.php" class="btn btn-primary btn-block text-center">Register</a>
+
+              <!-- <button type="submit" name="submit"  a href="login.php" class="text-center" class="btn btn-primary btn-block">Register</button> -->
             </div>
             <!-- /.col -->
           </div>
