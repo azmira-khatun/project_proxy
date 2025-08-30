@@ -64,37 +64,67 @@ if (!isset($conn)) {
                 <li><a style="font-weight: bold; color: black;" href="registration.php"
                         class="hover:text-indigo-600 transition duration-300">Registration</a></li>
             </ul> --><!-- Brand -->
-            <a href="home.php" class="text-2xl font-bold text-gray-900">Daily Event</a>
+            <!-- <a href="home.php" class="text-2xl font-bold text-gray-900">Daily Event</a> -->
 
             <!-- Navigation Links - Hidden on small screens -->
             <ul class="hidden md:flex space-x-8 text-gray-600 font-medium items-center">
                 <!-- My Account Dropdown -->
-                <li class="relative group">
-                    <button
-                        class="flex items-center space-x-2 font-semibold text-gray-800 hover:text-indigo-600 focus:outline-none">
-                        <i class="fas fa-user-circle text-xl"></i>
-                        <span>My Account</span>
-                        <i class="fas fa-chevron-down text-sm"></i>
-                    </button>
-                    <!-- Dropdown -->
-                    <ul class="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg hidden group-hover:block">
-                        <li>
-                            <a href="logout.php" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-t-lg">
-                                <i class="fas fa-sign-out-alt mr-2"></i>Logout
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
+                <nav class="bg-gray-800 p-4">
+
+
+                    <!-- My Account Dropdown -->
+                    <li class="relative">
+                        <button id="accountBtn" class="flex items-center space-x-2 text-white">
+                            <span>My Account</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown menu -->
+                        <ul id="accountMenu"
+                            class="absolute right-0 mt-2 w-40 bg-white text-gray-800 shadow-lg rounded-lg hidden">
+                            <li>
+                                <a href="index.php" class="block px-4 py-2 hover:bg-gray-100 rounded-t-lg">
+                                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
             </ul>
-
-
-
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden">
-                <button id="mobile-menu-btn" class="text-gray-600 hover:text-indigo-600 focus:outline-none">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
             </div>
+        </nav>
+
+        <!-- FontAwesome -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+        <!-- JS for dropdown -->
+        <script>
+            const btn = document.getElementById("accountBtn");
+            const menu = document.getElementById("accountMenu");
+
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+
+            // Optional: click outside to close
+            document.addEventListener("click", (e) => {
+                if (!btn.contains(e.target) && !menu.contains(e.target)) {
+                    menu.classList.add("hidden");
+                }
+            });
+        </script>
+
+
+
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+            <button id="mobile-menu-btn" class="text-gray-600 hover:text-indigo-600 focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
         </nav>
         <!-- Mobile Menu - hidden by default -->
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-gray-200">
