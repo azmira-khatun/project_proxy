@@ -2,42 +2,42 @@
 <?php
 // include("config.php");
 if (!isset($conn)) {
-	header("location:login.php");
+  header("location:login.php");
 }
-  if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
 
-    $first_name = $_POST['firstname'];
+  $first_name = $_POST['firstname'];
 
-    $last_name = $_POST['lastname'];
+  $last_name = $_POST['lastname'];
 
-    $email = $_POST['email'];
+  $email = $_POST['email'];
 
-    $password = $_POST['password'];
-    $role = $_POST['role'];
+  $password = $_POST['password'];
+  $role = $_POST['role'];
 
 
-    $sql = "INSERT INTO `users`(`firstname`, `lastname`, `email`, `password`,`role_name`) 
+  $sql = "INSERT INTO `users`(`firstname`, `lastname`, `email`, `password`,`role_name`) 
 
            VALUES ('$first_name','$last_name','$email','$password','$role')";
 
-    $result = $conn->query($sql);
+  $result = $conn->query($sql);
 
-    if ($result == TRUE) {
+  if ($result == TRUE) {
 
-      $r = "User Added Successfully";
+    $r = "User Added Successfully";
 
 
-    }else{
+  } else {
 
-      echo "Error:". $sql . "<br>". $conn->error;
+    echo "Error:" . $sql . "<br>" . $conn->error;
 
-    }
+  }
 
-    $conn->close();
+  $conn->close();
 
-  } 
+}
 
-?> 
+?>
 
 
 
@@ -81,21 +81,23 @@ if (!isset($conn)) {
           <div class="card-header">
             <h3 class="card-title">Quick Example</h3>
           </div>
-          <div class="ftitle text-center"> 
-			<h4><?php echo isset($r)?$r:"Users Registration Form" ?></h4>
-		</div>
+          <div class="ftitle text-center">
+            <h4><?php echo isset($r) ? $r : "Users Registration Form" ?></h4>
+          </div>
           <!-- /.card-header -->
           <!-- form start -->
-     <form action="#" method="post">
-                  <div class="card-body">
+          <form action="#" method="post">
+            <div class="card-body">
 
               <div class="form-group">
                 <label for="exampleInputEmail1">First Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Name" name="firstname">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Name"
+                  name="firstname">
               </div>
-               <div class="form-group">
+              <div class="form-group">
                 <label for="exampleInputEmail1">Last Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Last name" name="lastname">
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Last name"
+                  name="lastname">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
@@ -103,15 +105,18 @@ if (!isset($conn)) {
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                  name="password">
               </div>
-            <div class="form-group">
-   <label for="role">Role</label>
-   <select name="role" id="role" class="form-control">
-      <option value="admin">Admin</option>
-      <option value="staff">Staff</option>
-   </select>
-</div>
+              <div class="form-group">
+                <label for="role">Role</label>
+                <select name="role" id="role" class="form-control">
+                  <option value="admin">Admin</option>
+                  <option value="staff">Staff</option>
+                  <option value="staff">Customer</option>
+
+                </select>
+              </div>
 
             </div>
 
@@ -132,6 +137,3 @@ if (!isset($conn)) {
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
-
-

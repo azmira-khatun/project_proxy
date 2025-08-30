@@ -1,49 +1,43 @@
 <?php
-// include "config.php";
-// date_default_timezone_set("Asia/Dhaka"); 
+include("config.php");
+// session_start();
 
-// if(isset($_POST['btn-login'])) {
-// 	$email =	trim($_POST['email']);
-// 	$password =	trim($_POST['password']);
+if (isset($_POST['submit'])) {
+  $email = $_POST['email'];
+  $password = $_POST['password'];
 
-// 	$query = $db->query("SELECT * FROM users WHERE email='$email' AND password='$password' ");
-// 	header("location:home.php");
-// }
-// ?>
+  // database থেকে user check
+  $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+  $result = $conn->query($sql);
 
+  if ($result->num_rows > 0) {
+    // login success হলে session set
+    $row = $result->fetch_assoc();
+    $_SESSION['user_id'] = $row['id'];
+    $_SESSION['firstname'] = $row['firstname'];
 
-<?php
-session_start();
-require_once("config.php");
+    // redirect after login
+    header("Location: hello.php");
+    exit();
+  } else {
+    echo "<script>alert('Invalid Email or Password');</script>";
+  }
 
-if (isset($_POST["btnLogin"])) {
-    $email = trim($_POST["email"]);
-    $password = trim($_POST["password"]);
-
-    $query = $conn->query("SELECT id, email, password, role_name FROM users WHERE email='$email' AND password='$password'");
-
-    if ($query->num_rows > 0) {
-        list($id, $_email, $_password, $_role_name) = $query->fetch_row();
-        $_SESSION["s_email"] = $_email;
-        $_SESSION["s_role"] = $_role_name;   // if it's 1/2/3 OR Admin/User in DB
-        header("location:home.php");
-    } else {
-        $error = "<span style='color:red;'>Incorrect username or password</span>";
-    }
+  $conn->close();
 }
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Log in</title>
+  <title>AdminLTE 3 | Login Page</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="dist/plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
@@ -51,88 +45,56 @@ if (isset($_POST["btnLogin"])) {
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/dist/css/adminlte.min.css">
 </head>
+
 <body class="hold-transition login-page">
-  <div class="container-fluid"> 
-       <div class="row">
-          <div class="col-4" style="float: left;">
-          </div>
-        <div class="col-4" style="float: left;">
-          </div>
-        <!-- <div class="col-4">
-           <a href="index.php">
-            <button type="submit" class="btn btn-primary ">Register</button>
-            </a>
-             <a href="login.php">
-            <button type="submit" class="btn btn-info ">sign-in</button>
-            </a>
-          </div> -->
-       
-         
-          <!-- /.col -->
-        </div>
-  </div>
-<div class="login-box">
-  <div class="login-logo">
-    <a href="dist/index2.html"><b>Login</b></a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
- <div><?php echo isset($error)?$error:"";?></div>
-      <form action="#" method="post">
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" name = "email" placeholder="Email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" name = "password" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-         
-            <button type="submit" name="btnLogin" class="btn btn-primary btn-block">Sign In</button>
-       
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
 
-      <!-- /.social-auth-links -->
-
-      
-      <p class="mb-0">
-        <a href="index.php" class="text-center">Register a new membership</a>
-      </p>
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="#"><b>Login</b></a>
     </div>
-    <!-- /.login-card-body -->
-  </div>
-</div>
-<!-- /.login-box -->
 
-<!-- jQuery -->
-<script src="dist/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="dist/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/dist/js/adminlte.min.js"></script>
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+
+        <form action="#" method="post">
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Email" name="email" required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Password" name="password" required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4">
+              <button type="submit" name="submit" class="btn btn-primary btn-block">Sign In</button>
+            </div>
+          </div>
+        </form>
+
+        <p class="mb-0">
+          <a href="register.php" class="text-center">Register a new membership</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="dist/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="dist/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/dist/js/adminlte.min.js"></script>
 </body>
+
 </html>

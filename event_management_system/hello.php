@@ -58,12 +58,36 @@ if (!isset($conn)) {
             <a href="#" class="text-2xl font-bold text-gray-900">Daily Event</a>
 
             <!-- Navigation Links - Hidden on small screens -->
-            <ul class="hidden md:flex space-x-8 text-gray-600 font-medium">
+            <!-- <ul class="hidden md:flex space-x-8 text-gray-600 font-medium">
                 <li><a style="font-weight: bold; color: black;" href="login.php"
                         class="hover:text-indigo-600 transition duration-300">Login</a></li>
                 <li><a style="font-weight: bold; color: black;" href="registration.php"
                         class="hover:text-indigo-600 transition duration-300">Registration</a></li>
+            </ul> --><!-- Brand -->
+            <a href="home.php" class="text-2xl font-bold text-gray-900">Daily Event</a>
+
+            <!-- Navigation Links - Hidden on small screens -->
+            <ul class="hidden md:flex space-x-8 text-gray-600 font-medium items-center">
+                <!-- My Account Dropdown -->
+                <li class="relative group">
+                    <button
+                        class="flex items-center space-x-2 font-semibold text-gray-800 hover:text-indigo-600 focus:outline-none">
+                        <i class="fas fa-user-circle text-xl"></i>
+                        <span>My Account</span>
+                        <i class="fas fa-chevron-down text-sm"></i>
+                    </button>
+                    <!-- Dropdown -->
+                    <ul class="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg hidden group-hover:block">
+                        <li>
+                            <a href="logout.php" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-t-lg">
+                                <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
+
+
 
             <!-- Mobile Menu Button -->
             <div class="md:hidden">
