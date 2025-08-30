@@ -122,7 +122,9 @@ if (isset($_POST['submit'])) {
           <div class="row">
             <!-- /.col -->
             <div class="col-4">
-              <a href="login.php" class="btn btn-primary btn-block text-center">Register</a>
+              <!-- <a href="login.php" class="btn btn-primary btn-block text-center">Register</a> -->
+
+              <input type="submit" name="submit" value="Register" class="btn btn-primary btn-block text-center">
 
               <!-- <button type="submit" name="submit"  a href="login.php" class="text-center" class="btn btn-primary btn-block">Register</button> -->
             </div>
@@ -132,7 +134,9 @@ if (isset($_POST['submit'])) {
 
 
 
-        <a href="login.php" class="text-center">I already have a membership</a>
+        <b>
+          <p>I already have a membership. <a href="login.php">Click Here!</a></p>
+        </b>
       </div>
       <!-- /.form-box -->
     </div><!-- /.card -->
