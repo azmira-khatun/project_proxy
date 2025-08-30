@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 30, 2025 at 09:10 AM
+-- Generation Time: Aug 27, 2025 at 08:29 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -95,14 +95,11 @@ CREATE TABLE `event` (
 
 INSERT INTO `event` (`id`, `event_name`, `description`, `type`, `date`, `venue_id`, `image`) VALUES
 (1, 'wedding', 'good', 'Wedding', '2025-08-30', 2, './pages/bookingevent/uploads/pest_img.jpg'),
-(3, 'Birthday party', 'good', 'Birthday', '2025-08-23', 2, 'uploads/birthday.jpg'),
-(4, 'marriagev ceremony', 'good', 'Wedding', '2025-08-25', 2, 'uploads/wedding.jpg'),
-(5, 'BSC workshop', 'good', 'Seminar', '2025-08-29', 2, 'uploads/workshop.jpg'),
+(3, 'Birthday party', 'good', 'Birthday', '2025-08-23', 2, NULL),
+(4, 'marriagev ceremony', 'good', 'Wedding', '2025-08-25', 2, NULL),
+(5, 'BSC workshop', 'good', 'Seminar', '2025-08-29', 2, NULL),
 (6, 'MBBS workshop', 'Very short', 'Conference', '2025-08-31', 4, 'uploads/evt_68af3204983d29.48553702.jpg'),
-(7, 'Mahendi', 'goog', 'Wedding', '2025-08-29', 2, 'uploads/evt_68af343f99fa54.89201712.jpg'),
-(9, 'MBBS workshop', 'Excellent', 'Conference', '2025-09-03', 4, 'uploads/evt_68afff551652d3.22490473.jpg'),
-(10, 'Mahandi', 'gogh', 'Wedding', '2025-09-05', 2, 'uploads/evt_68afffec89cb58.06542320.jpg'),
-(11, 'Mahandi', 'goodd', 'Wedding', '2025-08-30', 3, 'uploads/mahandi3.jpg');
+(7, 'Mahendi', 'goog', 'Wedding', '2025-08-29', 2, 'uploads/evt_68af343f99fa54.89201712.jpg');
 
 -- --------------------------------------------------------
 
@@ -127,13 +124,6 @@ CREATE TABLE `table_roles` (
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `table_roles`
---
-
-INSERT INTO `table_roles` (`id`, `name`) VALUES
-(2, 'customer');
-
 -- --------------------------------------------------------
 
 --
@@ -145,24 +135,21 @@ CREATE TABLE `users` (
   `firstname` varchar(100) DEFAULT NULL,
   `lastname` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `password` varchar(100) DEFAULT NULL
+  `password` varchar(100) DEFAULT NULL,
+  `role_name` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`) VALUES
-(21, 'Rafia', 'islam', 'rafia@mail.com', '223355'),
-(22, 'mira', 'Akter', 'admin@mail.com', '1234'),
-(24, 'azmira', 'mukta', 'azmira@mail.com', '1234'),
-(25, ' Mohiuddin', 'Mohi', 'mohi@mail.com', '4444'),
-(28, 'sharmin', 'akter', 'sharmin@mail.com', '4444'),
-(30, 'Shahadat', 'Hossain', 'shahadat@gmail.com', '7777'),
-(31, 'Ayan', 'ahsan', 'ayan@gmail.com', '5678'),
-(32, 'Ayan', 'ahsan', 'ayan@gmail.com', '1234'),
-(33, 'Farhana', 's', 'farhana@gmail.com', '1234'),
-(37, 's', 'a', 's@gmail.com', '1234');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `role_name`) VALUES
+(21, 'Rafia', 'islam', 'rafia@mail.com', '223355', NULL),
+(22, 'mira', 'Akter', 'admin@mail.com', '1234', NULL),
+(24, 'azmira', 'mukta', 'azmira@mail.com', '1234', NULL),
+(25, ' Mohiuddin', 'Mohi', 'mohi@mail.com', '4444', 'Admin'),
+(28, 'sharmin', 'akter', 'sharmin@mail.com', '4444', 'admin'),
+(30, 'Shahadat', 'Hossain', 'shahadat@gmail.com', '7777', 'staff');
 
 -- --------------------------------------------------------
 
@@ -259,7 +246,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `table_rolemaping`
@@ -271,13 +258,13 @@ ALTER TABLE `table_rolemaping`
 -- AUTO_INCREMENT for table `table_roles`
 --
 ALTER TABLE `table_roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `venue`
