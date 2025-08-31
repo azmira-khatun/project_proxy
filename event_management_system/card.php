@@ -80,6 +80,7 @@ $cancelled_booking = 0;
     </div>
 
     <!-- Cancelled Booking -->
+     <!-- Cancelled Booking -->
     <div class="col-lg-3 col-md-4 col-sm-6" style="flex:1; min-width:240px; max-width:260px; margin-bottom:15px; margin-top:45px;">
       <div class="card text-white bg-danger h-100" style="min-height:100px; border-radius:0.75rem;">
         <div class="card-body d-flex align-items-center">
