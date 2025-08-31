@@ -10,12 +10,16 @@ if (!isset($conn)) {
 $msg = "";
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-// Get venue data for pre-filling
-$name = $location = $capacity = $rent = $description = "";
+// ফর্মের জন্য ডিফল্ট ভ্যালু
+$name = "";
+$location = "";
+$capacity = "";
+$rent = "";
+$description = "";
 
+// পুরানো ডেটা ফেচ করা
 if ($id > 0) {
-    $sql = "SELECT * FROM venue WHERE id=$id";
-    $res = $conn->query($sql);
+    $res = $conn->query("SELECT * FROM venue WHERE id='$id'");
     if ($res && $res->num_rows > 0) {
         $row = $res->fetch_assoc();
         $name = $row['name'];
@@ -28,30 +32,24 @@ if ($id > 0) {
     }
 }
 
-// Update venue
+// আপডেট প্রসেস
 if (isset($_POST['submit'])) {
-    $name_update = mysqli_real_escape_string($conn, $_POST['name']);
-    $location_update = mysqli_real_escape_string($conn, $_POST['location']);
-    $capacity_update = mysqli_real_escape_string($conn, $_POST['capacity']);
-    $rent_update = mysqli_real_escape_string($conn, $_POST['rent']);
-    $description_update = mysqli_real_escape_string($conn, $_POST['description']);
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $location = mysqli_real_escape_string($conn, $_POST['location']);
+    $capacity = mysqli_real_escape_string($conn, $_POST['capacity']);
+    $rent = mysqli_real_escape_string($conn, $_POST['rent']);
+    $description = mysqli_real_escape_string($conn, $_POST['description']);
 
     $sql_update = "UPDATE venue SET 
-                       name='$name_update', 
-                       location='$location_update', 
-                       capacity='$capacity_update', 
-                       rent='$rent_update', 
-                       description='$description_update'
-                   WHERE id=$id";
+                       name='$name', 
+                       location='$location', 
+                       capacity='$capacity', 
+                       rent='$rent', 
+                       description='$description'
+                   WHERE id='$id'";
 
     if ($conn->query($sql_update) === TRUE) {
         $msg = "<div class='alert alert-success'>Venue updated successfully.</div>";
-        // update form fields with new values
-        $name = $name_update;
-        $location = $location_update;
-        $capacity = $capacity_update;
-        $rent = $rent_update;
-        $description = $description_update;
     } else {
         $msg = "<div class='alert alert-danger'>Error: " . $conn->error . "</div>";
     }
@@ -68,30 +66,35 @@ if (isset($_POST['submit'])) {
             <div class="card-body">
                 <?php echo $msg; ?>
 
-                <form action="" method="post">
+                <form method="post">
                     <div class="form-group">
                         <label>Venue Name</label>
-                        <input type="text" class="form-control" name="name" value="<?php echo htmlspecialchars($name); ?>" required>
+                        <input type="text" class="form-control" name="name"
+                            value="<?php echo htmlspecialchars($name); ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label>Location</label>
-                        <input type="text" class="form-control" name="location" value="<?php echo htmlspecialchars($location); ?>" required>
+                        <input type="text" class="form-control" name="location"
+                            value="<?php echo htmlspecialchars($location); ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label>Capacity</label>
-                        <input type="number" class="form-control" name="capacity" value="<?php echo htmlspecialchars($capacity); ?>" required>
+                        <input type="number" class="form-control" name="capacity"
+                            value="<?php echo htmlspecialchars($capacity); ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label>Rent (TK)</label>
-                        <input type="number" class="form-control" name="rent" value="<?php echo htmlspecialchars($rent); ?>" required>
+                        <input type="number" class="form-control" name="rent"
+                            value="<?php echo htmlspecialchars($rent); ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label>Description</label>
-                        <textarea class="form-control" name="description" rows="3"><?php echo htmlspecialchars($description); ?></textarea>
+                        <textarea class="form-control" name="description"
+                            rows="3"><?php echo htmlspecialchars($description); ?></textarea>
                     </div>
 
                     <button type="submit" name="submit" class="btn btn-primary">Update</button>

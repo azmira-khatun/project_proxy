@@ -130,7 +130,7 @@ if (isset($_POST['submit'])) {
             </div>
             <!-- /.col -->
           </div>
-        </form>                              
+        </form>
 
         <b>
           <p>I already have a membership. <a href="login.php">Click Here!</a></p>
