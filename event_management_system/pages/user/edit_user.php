@@ -68,22 +68,26 @@ if (isset($_POST['submit'])) {
 
                     <div class="form-group">
                         <label>First Name</label>
-                        <input type="text" class="form-control" name="firstname" value="<?php echo htmlspecialchars($firstname); ?>" required>
+                        <input type="text" class="form-control" name="firstname"
+                            value="<?php echo htmlspecialchars($firstname); ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label>Last Name</label>
-                        <input type="text" class="form-control" name="lastname" value="<?php echo htmlspecialchars($lastname); ?>" required>
+                        <input type="text" class="form-control" name="lastname"
+                            value="<?php echo htmlspecialchars($lastname); ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
+                        <input type="email" class="form-control" name="email"
+                            value="<?php echo htmlspecialchars($email); ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="text" class="form-control" name="password" value="<?php echo htmlspecialchars($password); ?>" required>
+                        <input type="text" class="form-control" name="password"
+                            value="<?php echo htmlspecialchars($password); ?>" required>
                     </div>
 
                     <button type="submit" name="submit" class="btn btn-primary">Update</button>
