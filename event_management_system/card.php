@@ -100,7 +100,7 @@ $cancelled_booking = 0;
         </div>
 
         <!-- Listed Categories -->
-        <div class="col-lg-3 col-md-4 col-sm-6" style="flex:1; min-width:240px; max-width:260px; margin-bottom:15px;">
+        <!-- <div class="col-lg-3 col-md-4 col-sm-6" style="flex:1; min-width:240px; max-width:260px; margin-bottom:15px;">
           <div class="card text-white bg-primary h-100" style="min-height:100px; border-radius:0.75rem;">
             <div class="card-body d-flex align-items-center">
               <i class="fas fa-list fa-3x me-3"></i>
@@ -110,10 +110,10 @@ $cancelled_booking = 0;
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Sponsors -->
-        <div class="col-lg-3 col-md-4 col-sm-6" style="flex:1; min-width:240px; max-width:260px; margin-bottom:15px;">
+        <!-- <div class="col-lg-3 col-md-4 col-sm-6" style="flex:1; min-width:240px; max-width:260px; margin-bottom:15px;">
           <div class="card text-white bg-success h-100" style="min-height:100px; border-radius:0.75rem;">
             <div class="card-body d-flex align-items-center">
               <i class="fas fa-server fa-3x me-3"></i>
@@ -123,7 +123,7 @@ $cancelled_booking = 0;
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Total Events -->
         <div class="col-lg-3 col-md-4 col-sm-6" style="flex:1; min-width:240px; max-width:260px; margin-bottom:15px;">
