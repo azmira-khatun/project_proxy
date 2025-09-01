@@ -13,7 +13,8 @@ if (isset($_POST['submit'])) {
     // Image upload process
     if (isset($_FILES['event_image']) && $_FILES['event_image']['error'] === UPLOAD_ERR_OK) {
         $targetDir = __DIR__ . '/uploads/';
-        if (!is_dir($targetDir)) mkdir($targetDir, 0755, true);
+        if (!is_dir($targetDir))
+            mkdir($targetDir, 0755, true);
 
         $tmpName = $_FILES['event_image']['tmp_name'];
         $originalName = basename($_FILES['event_image']['name']);
@@ -54,7 +55,9 @@ if (isset($_POST['submit'])) {
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6"><h1>Add Event</h1></div>
+                <div class="col-sm-6">
+                    <h1>Add Event</h1>
+                </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -67,11 +70,15 @@ if (isset($_POST['submit'])) {
 
     <section class="content">
         <div class="card">
-            <div class="card-header bg-primary text-white"><h3 class="card-title">Event Form</h3></div>
+            <div class="card-header bg-primary text-white">
+                <h3 class="card-title">Event Form</h3>
+            </div>
 
             <div class="card-body">
                 <div class="card card-primary">
-                    <div class="card-header"><h3 class="card-title">Quick Example</h3></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Quick Example</h3>
+                    </div>
                     <div class="ftitle text-center">
                         <h4><?php echo isset($msg) ? $msg : "Event Registration Form"; ?></h4>
                     </div>
@@ -81,13 +88,14 @@ if (isset($_POST['submit'])) {
 
                             <div class="form-group">
                                 <label for="event_name">Event Name</label>
-                                <input type="text" class="form-control" id="event_name" name="event_name" placeholder="Enter Event Name" required>
+                                <input type="text" class="form-control" id="event_name" name="event_name"
+                                    placeholder="Enter Event Name" required>
                             </div>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="description">Description</label>
                                 <textarea class="form-control" id="description" name="description" placeholder="Enter Description" rows="4" required></textarea>
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                                 <label for="type">Event Type</label>
@@ -121,7 +129,8 @@ if (isset($_POST['submit'])) {
 
                             <div class="form-group">
                                 <label for="event_image">Event Image</label>
-                                <input type="file" class="form-control" id="event_image" name="event_image" accept="image/*" required>
+                                <input type="file" class="form-control" id="event_image" name="event_image"
+                                    accept="image/*" required>
                             </div>
 
                         </div>
