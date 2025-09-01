@@ -3,26 +3,26 @@ include("config.php"); // Database connection
 
 $msg = "";
 
-if(isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $location = $_POST['location'];
-    $capacity = $_POST['capacity'];
-    $rent = $_POST['rent'];
-    $description = $_POST['description'];
+if (isset($_POST['submit'])) {
+  $name = $_POST['name'];
+  $location = $_POST['location'];
+  $capacity = $_POST['capacity'];
+  $rent = $_POST['rent'];
+  $description = $_POST['description'];
 
-    if(empty($name) || empty($location) || empty($capacity) || empty($rent)){
-        $msg = "<div class='alert alert-danger'>Please fill all required fields!</div>";
-    } else {
-        $sql = "INSERT INTO venue (name, location, capacity, rent, description) 
+  if (empty($name) || empty($location) || empty($capacity) || empty($rent)) {
+    $msg = "<div class='alert alert-danger'>Please fill all required fields!</div>";
+  } else {
+    $sql = "INSERT INTO venue (name, location, capacity, rent, description) 
                 VALUES ('$name', '$location', '$capacity', '$rent', '$description')";
-        $result = $conn->query($sql);
+    $result = $conn->query($sql);
 
-        if($result){
-            $msg = "<div class='alert alert-success'>Venue added successfully!</div>";
-        } else {
-            $msg = "<div class='alert alert-danger'>Error: " . $conn->error . "</div>";
-        }
+    if ($result) {
+      $msg = "<div class='alert alert-success'>Venue added successfully!</div>";
+    } else {
+      $msg = "<div class='alert alert-danger'>Error: " . $conn->error . "</div>";
     }
+  }
 }
 ?>
 
@@ -64,7 +64,7 @@ if(isset($_POST['submit'])) {
           </div>
 
           <div class="ftitle text-center">
-            <h4><?php echo isset($msg)?$msg:"Fill Venue Details Below" ?></h4>
+            <h4><?php echo isset($msg) ? $msg : "Fill Venue Details Below" ?></h4>
           </div>
 
           <form action="" method="post">
@@ -92,7 +92,8 @@ if(isset($_POST['submit'])) {
 
               <div class="form-group">
                 <label for="description">Description</label>
-                <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter description"></textarea>
+                <textarea class="form-control" id="description" name="description" rows="3"
+                  placeholder="Enter description"></textarea>
               </div>
 
             </div>

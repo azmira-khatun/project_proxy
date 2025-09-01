@@ -50,18 +50,7 @@ require_once("config.php");
           </li>
         <?php } ?>
 
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-calendar-alt"></i>
-            <p>Event Management<i class="fas fa-angle-left right"></i></p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item"><a href="home.php?page=4" class="nav-link"><i class="far fa-circle nav-icon"></i> Add
-                Event</a></li>
-            <li class="nav-item"><a href="home.php?page=5" class="nav-link"><i class="far fa-circle nav-icon"></i>
-                Manage Event</a></li>
-          </ul>
-        </li>
+
         <!-- venue start -->
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -73,6 +62,20 @@ require_once("config.php");
                 <i class="far fa-circle nav-icon"></i> Add Venue</a></li>
             <li class="nav-item"><a href="home.php?page=8" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>Venue Details</a></li>
+          </ul>
+        </li>
+
+        <!-- event start -->
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-calendar-alt"></i>
+            <p>Event Management<i class="fas fa-angle-left right"></i></p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item"><a href="home.php?page=4" class="nav-link"><i class="far fa-circle nav-icon"></i> Add
+                Event</a></li>
+            <li class="nav-item"><a href="home.php?page=5" class="nav-link"><i class="far fa-circle nav-icon"></i>
+                Manage Event</a></li>
           </ul>
         </li>
         <!-- booking start -->

@@ -68,9 +68,25 @@ if (!isset($conn)) {
 
             <!-- Navigation Links - Hidden on small screens -->
             <ul class="hidden md:flex space-x-8 text-gray-600 font-medium items-center">
+
+
+                <!-- Cart Icon with Badge -->
+                <li class="relative">
+                    <a href="cart.php"
+                        class="flex items-center text-gray-800 hover:text-indigo-600 transition duration-300">
+                        <i class="fas fa-shopping-cart text-2xl"></i>
+                        <span
+                            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                            0
+                        </span>
+                    </a>
+                </li>
+
                 <!-- My Account Dropdown -->
 
                 <nav class="bg-gray-800 p-4">
+
+
 
 
                     <!-- My Account Dropdown -->

@@ -25,14 +25,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['customer_name'])) {
     $venue_id = $event['venue_id'];
     $date = $event['date'];
 
-    // Insert into booking
+    // Insert into booking with status Pending
     $sql = "INSERT INTO booking 
-                (event_id, venue_id, date, customer_name, gmail, contact_number, address)
+                (event_id, venue_id, date, customer_name, gmail, contact_number, address, status)
                 VALUES
-                ('$event_id','$venue_id','$date','$customer_name','$gmail','$contact_number','$address')";
+                ('$event_id','$venue_id','$date','$customer_name','$gmail','$contact_number','$address','Pending')";
 
     if ($conn->query($sql) === TRUE) {
-      $msg = "<div class='alert alert-success'>Booking confirmed!</div>";
+      $msg = "<div class='alert alert-success'>Booking confirmed! Status: Pending</div>";
     } else {
       $msg = "<div class='alert alert-danger'>Error: " . $conn->error . "</div>";
     }
@@ -113,6 +113,11 @@ $events = $conn->query("
           <div class="form-group">
             <label>Address</label>
             <textarea name="address" class="form-control"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Status</label>
+            <input type="text" class="form-control" value="Pending" readonly>
           </div>
 
           <button type="submit" class="btn btn-success">Confirm Booking</button>

@@ -92,10 +92,11 @@ if (isset($_POST['submit'])) {
                                     placeholder="Enter Event Name" required>
                             </div>
 
-                            <!-- <div class="form-group">
+                            <div class="form-group">
                                 <label for="description">Description</label>
-                                <textarea class="form-control" id="description" name="description" placeholder="Enter Description" rows="4" required></textarea>
-                            </div> -->
+                                <textarea class="form-control" id="description" name="description"
+                                    placeholder="Enter Description" rows="4" required></textarea>
+                            </div>
 
                             <div class="form-group">
                                 <label for="type">Event Type</label>
