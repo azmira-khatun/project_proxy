@@ -201,7 +201,7 @@ if (!empty($_SESSION['cart'])) {
         </div>
     </section>
 
-    <section id="features" class="py-16 bg-gray-50">
+    <!-- <section id="features" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose Daily Event?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -225,7 +225,36 @@ if (!empty($_SESSION['cart'])) {
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+
+    <section id="features" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose Daily Event?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-[url('uploads/images (1).jpg')] bg-cover bg-center p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
+        <div class="text-indigo-600 text-4xl mb-4"><i class="fas fa-edit"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Easy Event Setup</h3>
+        <p class="text-white">Create and publish your events in minutes with our intuitive dashboard.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-[url('image2.jpg')] bg-cover bg-center p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
+        <div class="text-indigo-600 text-4xl mb-4"><i class="fas fa-credit-card"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Ticketing & Payments</h3>
+        <p class="text-white">Handle registrations and ticket sales with integrated payment options.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-[url('image3.jpg')] bg-cover bg-center p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
+        <div class="text-indigo-600 text-4xl mb-4"><i class="fas fa-chart-line"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Real-time Analytics</h3>
+        <p class="text-white">Track attendee data, revenue, and engagement in real-time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <section id="events" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
