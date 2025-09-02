@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2025 at 09:51 AM
+-- Generation Time: Sep 02, 2025 at 03:09 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -62,10 +62,11 @@ INSERT INTO `booking` (`id`, `event_id`, `venue_id`, `date`, `customer_name`, `g
 (8, 13, 5, '2025-09-06', 'Lucky Akter', 'lucky@gmail.com', '90755600', 'Dhaka', 'pending'),
 (9, 13, 5, '2025-09-06', 'Azmira', 'azmira@gmail.com', '019890998', 'Uttara Dhaka', 'pending'),
 (10, 1, 2, '2025-08-30', 'Azmira', 'azmira@gmail.com', '019890998', 'Uttara Dhaka', 'pending'),
-(11, 7, 2, '2025-08-29', 'Azmira', 'azmira@gmail.com', '019890998', 'Uttara Dhaka', 'pending'),
 (12, 12, 6, '2025-08-31', 'Azmira', 'azmira@gmail.com', '019890998', 'Uttara Dhaka', 'pending'),
 (13, 3, 2, '2025-08-23', 'Azmira', 'azmira@gmail.com', '019890998', 'Uttara Dhaka', 'pending'),
-(14, 5, 2, '2025-08-29', 'Azmira', 'azmira@gmail.com', '019890998', 'Uttara Dhaka', 'complete');
+(14, 5, 2, '2025-08-29', 'Azmira', 'azmira@gmail.com', '019890998', 'Uttara Dhaka', 'complete'),
+(15, 13, 5, '2025-09-06', 'Test', 'test@gmail.com', '907556', 'uttara', 'pending'),
+(16, 12, 6, '2025-08-31', 'Test', 'test@gmail.com', '907556', 'uttara', 'complete');
 
 -- --------------------------------------------------------
 
@@ -100,12 +101,14 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `event_name`, `description`, `type`, `date`, `venue_id`, `image`) VALUES
-(1, 'wedding', 'good', 'Wedding', '2025-08-30', 2, './pages/bookingevent/uploads/pest_img.jpg'),
+(1, 'Wedding', 'good', 'Wedding', '2025-08-30', 2, './pages/bookingevent/uploads/pest_img.jpg'),
 (3, 'Birthday party', 'good', 'Birthday', '2025-08-23', 2, 'uploads/birthday.jpg'),
 (5, 'BSC workshop', 'good', 'Seminar', '2025-08-29', 2, 'uploads/workshop.jpg'),
-(7, 'Mahendi', 'goog', 'Wedding', '2025-08-29', 2, 'uploads/evt_68af343f99fa54.89201712.jpg'),
-(12, 'Wedding', '', 'Wedding', '2025-08-31', 6, 'uploads/evt_68b50cf04d1a52.46425456.jpg'),
-(13, 'Birthday party', 'Colorful birthday celebration with customized decoration, kids’ play zone, music, and cake arrangement. Ideal for small family gatherings', 'Birthday', '2025-09-06', 5, 'uploads/birthday.jpg');
+(12, 'Wedding', '', 'Wedding', '2025-08-31', 6, 'uploads/evt_68b5b4210502d6.45938421.jpg'),
+(13, 'Birthday party', 'Colorful birthday celebration with customized decoration, kids’ play zone, music, and cake arrangement. Ideal for small family gatherings', 'Birthday', '2025-09-06', 5, 'uploads/birthday.jpg'),
+(14, 'BSC workshop', 'Good Experience', 'Conference', '2025-09-03', 6, 'uploads/images (2).jpg'),
+(16, 'MBBS workshop', 'good', 'Seminar', '2025-09-11', 2, 'uploads/evt_68b5b3e40b5bf2.80603653.jpg'),
+(17, 'Wedding', 'good', 'Wedding', '2025-09-12', 5, 'uploads/evt_68b5b55cd8b4e2.32479391.jpg');
 
 -- --------------------------------------------------------
 
@@ -252,7 +255,7 @@ ALTER TABLE `venue`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -264,7 +267,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `table_rolemaping`
