@@ -26,11 +26,11 @@ if (isset($_POST['update'])) {
     $address = $conn->real_escape_string($_POST['address']);
     $status = $_POST['status'];
 
-    $update = "UPDATE booking SET 
-                event_id='$event_id', venue_id='$venue_id', date='$date', 
-                customer_name='$customer_name', gmail='$gmail', 
+    $update = "UPDATE booking SET
+                event_id='$event_id', venue_id='$venue_id', date='$date',
+                customer_name='$customer_name', gmail='$gmail',
                 contact_number='$contact_number', address='$address', status='$status'
-               WHERE id=$id";
+                WHERE id=$id";
 
     if ($conn->query($update) === TRUE) {
         $msg = "<div class='alert alert-success'>Booking updated successfully!</div>";
@@ -51,7 +51,7 @@ if (isset($_POST['changeStatus'])) {
 }
 
 // Fetch bookings
-$sql = "SELECT b.*, e.event_name, v.name AS venue_name 
+$sql = "SELECT b.*, e.event_name, v.name AS venue_name
         FROM booking b
         JOIN event e ON b.event_id = e.id
         JOIN venue v ON b.venue_id = v.id
@@ -110,16 +110,21 @@ while ($v = $venues->fetch_assoc()) {
                                     <td><?= htmlspecialchars($row['contact_number']); ?></td>
                                     <td><?= htmlspecialchars($row['address']); ?></td>
                                     <td>
+                                        <?= htmlspecialchars($row['status']); ?>
                                         <form method="post" style="display:inline-block;">
                                             <input type="hidden" name="booking_id" value="<?= $row['id']; ?>">
-                                            <?php if ($row['status'] == 'Pending'): ?>
+                                            <?php
+                                            // Use trim() to handle potential whitespace in the database value
+                                            $currentStatus = trim($row['status']);
+                                            if ($currentStatus == 'Pending'):
+                                                ?>
                                                 <input type="hidden" name="status" value="Complete">
                                                 <button type="submit" name="changeStatus" class="btn btn-warning btn-sm">Mark
                                                     Complete</button>
                                             <?php else: ?>
                                                 <input type="hidden" name="status" value="Pending">
-                                                <button type="submit" name="changeStatus" class="btn btn-success btn-sm">Mark
-                                                    Pending</button>
+                                                <!-- <button type="submit" name="changeStatus" class="btn btn-success btn-sm">Mark
+                                                    Pending</button> -->
                                             <?php endif; ?>
                                         </form>
                                     </td>
@@ -161,7 +166,6 @@ while ($v = $venues->fetch_assoc()) {
     </section>
 </div>
 
-<!-- Edit Modal -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <form method="post">

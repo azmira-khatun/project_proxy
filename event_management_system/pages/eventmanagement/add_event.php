@@ -22,8 +22,17 @@ if (isset($_POST['submit'])) {
         $allowedExt = ['jpg', 'jpeg', 'png', 'gif'];
 
         if (in_array($extension, $allowedExt)) {
-            $newFileName = uniqid('evt_', true) . '.' . $extension;
+            // Original filename
+            $newFileName = $originalName;
+
+            // Prevent overwrite (add _1, _2 ...)
             $targetFile = $targetDir . $newFileName;
+            $i = 1;
+            while (file_exists($targetFile)) {
+                $newFileName = pathinfo($originalName, PATHINFO_FILENAME) . "_$i." . $extension;
+                $targetFile = $targetDir . $newFileName;
+                $i++;
+            }
 
             if (move_uploaded_file($tmpName, $targetFile)) {
                 // Save image path in the database
@@ -34,18 +43,18 @@ if (isset($_POST['submit'])) {
                         VALUES ('$event_name', '$description', '$type', '$date', '$venue_id', '$image')";
 
                 if ($conn->query($sql) === TRUE) {
-                    $msg = "Event and image successfully saved!";
+                    $msg = "<div class='alert alert-success'>Event and image successfully saved!</div>";
                 } else {
-                    $msg = "Error: " . $conn->error;
+                    $msg = "<div class='alert alert-danger'>Error: " . $conn->error . "</div>";
                 }
             } else {
-                $msg = "Failed to move uploaded file.";
+                $msg = "<div class='alert alert-danger'>Failed to move uploaded file.</div>";
             }
         } else {
-            $msg = "Invalid file type. Only JPG, PNG, GIF allowed.";
+            $msg = "<div class='alert alert-warning'>Invalid file type. Only JPG, PNG, GIF allowed.</div>";
         }
     } else {
-        $msg = "No image uploaded or upload error.";
+        $msg = "<div class='alert alert-warning'>No image uploaded or upload error.</div>";
     }
 }
 ?>
@@ -80,10 +89,10 @@ if (isset($_POST['submit'])) {
                         <h3 class="card-title">Quick Example</h3>
                     </div>
                     <div class="ftitle text-center">
-                        <h4><?php echo isset($msg) ? $msg : "Event Registration Form"; ?></h4>
+                        <h4><?php echo $msg ?: "Event Registration Form"; ?></h4>
                     </div>
 
-                    <form action="#" method="post" enctype="multipart/form-data">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <div class="card-body">
 
                             <div class="form-group">

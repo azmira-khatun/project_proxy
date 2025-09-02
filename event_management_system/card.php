@@ -42,7 +42,7 @@ $cancelled_booking = 0;
     <div class="container mt-4">
       <div class="row justify-content-center">
 
-        <!-- Total Bookings -->
+        <!-- Total Event -->
         <div class="col-lg-3 col-md-4 col-sm-6"
           style="flex:1; min-width:240px; max-width:260px; margin-bottom:15px;margin-top:45px;">
           <div class="card text-white bg-warning h-100" style="min-height:100px; border-radius:0.75rem;">
@@ -50,7 +50,7 @@ $cancelled_booking = 0;
               <i class="fas fa-book fa-3x me-3"></i>
               <div>
                 <h3 class="mb-0"><?php echo $total_booking; ?></h3>
-                <p class="mb-0">Total Bookings</p>
+                <p class="mb-0">Total Event</p>
               </div>
             </div>
           </div>
@@ -126,7 +126,7 @@ $cancelled_booking = 0;
         </div> -->
 
         <!-- Total Events -->
-        <div class="col-lg-3 col-md-4 col-sm-6" style="flex:1; min-width:240px; max-width:260px; margin-bottom:15px;">
+        <!-- <div class="col-lg-3 col-md-4 col-sm-6" style="flex:1; min-width:240px; max-width:260px; margin-bottom:15px;">
           <div class="card text-white bg-warning h-100" style="min-height:100px; border-radius:0.75rem;">
             <div class="card-body d-flex align-items-center">
               <i class="fas fa-calendar fa-3x me-3"></i>
@@ -136,10 +136,10 @@ $cancelled_booking = 0;
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Total Users -->
-        <div class="col-lg-3 col-md-4 col-sm-6" style="flex:1; min-width:240px; max-width:260px; margin-bottom:15px;">
+        <!-- <div class="col-lg-3 col-md-4 col-sm-6" style="flex:1; min-width:240px; max-width:260px; margin-bottom:15px;">
           <div class="card text-white bg-danger h-100" style="min-height:100px; border-radius:0.75rem;">
             <div class="card-body d-flex align-items-center">
               <i class="fas fa-users fa-3x me-3"></i>
@@ -149,7 +149,7 @@ $cancelled_booking = 0;
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>

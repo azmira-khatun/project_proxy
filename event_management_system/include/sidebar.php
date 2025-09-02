@@ -93,6 +93,35 @@ require_once("config.php");
                 <i class="far fa-circle nav-icon"></i>Show booking</a></li> -->
           </ul>
         </li>
+        <li class="nav-header">Pages</li>
+
+        <li class="nav-item">
+          <a href="http://localhost/project_proxy/event_management_system/index.php" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+            <p>
+              Landing Page
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+        <li class="nav-item"><a href="home.php?page=13" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+            <p>
+              Contact us
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+            <p>
+              About us
+            </p>
+          </a>
+        </li>
+
 
 
 

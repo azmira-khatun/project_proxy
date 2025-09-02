@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     $_SESSION['firstname'] = $row['firstname'];
 
     // redirect after login
-    header("Location: hello.php");
+    header("Location: index.php");
     exit();
   } else {
     echo "<script>alert('Invalid Email or Password');</script>";

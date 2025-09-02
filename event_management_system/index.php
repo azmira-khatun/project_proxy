@@ -121,10 +121,17 @@ if (!empty($_SESSION['cart'])) {
             <a href="#" class="text-2xl font-bold text-gray-900">Daily Event</a>
 
             <ul class="hidden md:flex space-x-8 text-gray-600 font-medium items-center">
-                <li><a href="login.php"
-                        class="hover:text-indigo-600 transition duration-300 font-bold text-black">Login</a></li>
-                <li><a href="registration.php"
-                        class="hover:text-indigo-600 transition duration-300 font-bold text-black">Registration</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <!-- <li><a href="my_account.php"
+                            class="hover:text-indigo-600 transition duration-300 font-bold text-black">My Account</a></li> -->
+                    <li><a href="logout.php"
+                            class="hover:text-indigo-600 transition duration-300 font-bold text-black">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="login.php"
+                            class="hover:text-indigo-600 transition duration-300 font-bold text-black">Login</a></li>
+                    <li><a href="registration.php"
+                            class="hover:text-indigo-600 transition duration-300 font-bold text-black">Registration</a></li>
+                <?php endif; ?>
                 <li>
                     <button id="toggleCart" class="px-4 py-2 bg-blue-600 text-white rounded-lg">
                         Cart (<?= count($_SESSION['cart']) ?>)
@@ -144,8 +151,13 @@ if (!empty($_SESSION['cart'])) {
 
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-gray-200">
             <ul class="flex flex-col p-4 space-y-2 text-gray-600 font-medium">
-                <li><a href="login.php" class="block p-2 hover:bg-gray-100 rounded-md">Login</a></li>
-                <li><a href="registration.php" class="block p-2 hover:bg-gray-100 rounded-md">Registration</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="my_account.php" class="block p-2 hover:bg-gray-100 rounded-md">My Account</a></li>
+                    <li><a href="logout.php" class="block p-2 hover:bg-gray-100 rounded-md">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="login.php" class="block p-2 hover:bg-gray-100 rounded-md">Login</a></li>
+                    <li><a href="registration.php" class="block p-2 hover:bg-gray-100 rounded-md">Registration</a></li>
+                <?php endif; ?>
             </ul>
         </div>
     </header>
@@ -201,58 +213,31 @@ if (!empty($_SESSION['cart'])) {
         </div>
     </section>
 
-    <!-- <section id="features" class="py-16 bg-gray-50">
+    <section id="features" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose Daily Event?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div
-                    class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
+                    class="bg-[url('uploads/images (1).jpg')] bg-cover bg-center p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
                     <div class="text-indigo-600 text-4xl mb-4"><i class="fas fa-edit"></i></div>
                     <h3 class="text-xl font-semibold mb-2">Easy Event Setup</h3>
-                    <p class="text-gray-600">Create and publish your events in minutes with our intuitive dashboard.</p>
+                    <p class="text-white">Create and publish your events in minutes with our intuitive dashboard.</p>
                 </div>
                 <div
-                    class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
+                    class="bg-[url('image2.jpg')] bg-cover bg-center p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
                     <div class="text-indigo-600 text-4xl mb-4"><i class="fas fa-credit-card"></i></div>
                     <h3 class="text-xl font-semibold mb-2">Ticketing & Payments</h3>
-                    <p class="text-gray-600">Handle registrations and ticket sales with integrated payment options.</p>
+                    <p class="text-white">Handle registrations and ticket sales with integrated payment options.</p>
                 </div>
                 <div
-                    class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
+                    class="bg-[url('image3.jpg')] bg-cover bg-center p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
                     <div class="text-indigo-600 text-4xl mb-4"><i class="fas fa-chart-line"></i></div>
                     <h3 class="text-xl font-semibold mb-2">Real-time Analytics</h3>
-                    <p class="text-gray-600">Track attendee data, revenue, and engagement in real-time.</p>
+                    <p class="text-white">Track attendee data, revenue, and engagement in real-time.</p>
                 </div>
             </div>
         </div>
-    </section> -->
-
-
-    <section id="features" class="py-16 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose Daily Event?</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Card 1 -->
-      <div class="bg-[url('uploads/images (1).jpg')] bg-cover bg-center p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
-        <div class="text-indigo-600 text-4xl mb-4"><i class="fas fa-edit"></i></div>
-        <h3 class="text-xl font-semibold mb-2">Easy Event Setup</h3>
-        <p class="text-white">Create and publish your events in minutes with our intuitive dashboard.</p>
-      </div>
-      <!-- Card 2 -->
-      <div class="bg-[url('image2.jpg')] bg-cover bg-center p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
-        <div class="text-indigo-600 text-4xl mb-4"><i class="fas fa-credit-card"></i></div>
-        <h3 class="text-xl font-semibold mb-2">Ticketing & Payments</h3>
-        <p class="text-white">Handle registrations and ticket sales with integrated payment options.</p>
-      </div>
-      <!-- Card 3 -->
-      <div class="bg-[url('image3.jpg')] bg-cover bg-center p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
-        <div class="text-indigo-600 text-4xl mb-4"><i class="fas fa-chart-line"></i></div>
-        <h3 class="text-xl font-semibold mb-2">Real-time Analytics</h3>
-        <p class="text-white">Track attendee data, revenue, and engagement in real-time.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
 

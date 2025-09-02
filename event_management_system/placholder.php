@@ -60,6 +60,10 @@ if (isset($_GET["page"])) {
 	} else if ($page == 12) {
 
 		include("pages/bookingevent/edit_booking.php");
+		// } else if ($page == 13) {
+
+		// 	include("pages/contact/contact.php");
+
 
 	} else {
 
