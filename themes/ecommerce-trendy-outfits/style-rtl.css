@@ -1,0 +1,765 @@
+/*RTL CSS*/
+
+.fashion-images img{
+  width: 100% !important;
+  height: 300px !important;
+}
+.banner-btn a{
+  height: 300px !important;
+}
+.call-icon-main{
+  position: relative;
+}
+.wp-block-search.wp-block-search__button-only .wp-block-search__input{
+  position: absolute;
+  left: 50px;
+  top: -0px;
+}
+.wp-block-search.wp-block-search__button-only .wp-block-search__inside-wrapper{
+  justify-content: center !important;
+}
+.wc-block-mini-cart__button,.wp-block-woocommerce-customer-account a,.wish-icon p{
+  background: transparent;
+  border-radius: 10px;
+  padding: 10px !important;
+  text-align: center;
+  color: inherit !important;
+  font-size: 15px !important;
+}
+.banner-images-main{
+  margin-top: -115px;
+}
+.slider-box-left h2{
+  position: relative;
+  z-index: 2;
+}
+.search-box{
+  position: relative;
+}
+.search-icon p {
+  display: flex;
+  width: 55px;
+  height: 55px;
+  border-radius: 50px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.search-icon p span {
+  color: var(--wp--preset--color--contrast) !important;
+  font-size: 40px;
+  width: 50px;
+  display: block;
+  height: 50px;
+  text-align: center;
+  margin: 0px !important;
+}
+.award-box-left:hover .search-icon p span{
+  color: var(--wp--preset--color--base) !important;
+}
+.award-box-left:hover .search-icon p{
+  background: var(--wp--preset--color--primary) !important;
+}
+.search-icon {
+  text-align: center;
+}
+.single a{
+  color: var(--wp--preset--color--primary);
+}
+.wc-block-mini-cart__quantity-badge svg{
+  color: var(--wp--preset--color--primary) !important ;
+  fill: var(--wp--preset--color--primary)  !important;
+}
+.eb-cd-wrapper .eb-cd-inner,.eb-cd-wrapper .eb-cd-inner{
+  display: flex;
+  gap:10px;
+}
+.wishlist-column .wp-block-columns.are-vertically-aligned-center.is-layout-flex.wp-container-core-columns-is-layout-430f08e6.wp-block-columns-is-layout-flex{
+  justify-content: flex-end;
+}
+.slider-right{
+  position: relative;
+}
+.our-projects .product-main {
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}
+.owl-stage-outer {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0px !important;
+}
+.wishlist-column img {
+  margin-left: 4px;
+}
+.cart-icon{
+  text-align: left;
+}
+.image-box .product-image img,.image-box .product-image{
+  width: 100% !important;
+  height: 300px;
+}
+.wishlist-column, .cart-column {
+  position: relative;
+}
+.image-box{
+  position: relative;
+}
+.carrt-btn{
+  position: absolute;
+  bottom: 10px;
+  opacity: 0;
+  left: 0px;
+  right: 0px;
+}
+.product-main:hover .carrt-btn{
+  opacity: 1;
+}
+.gallery-1 img{
+  width: 100%;
+  height: 220px !important;
+  object-fit: cover;
+}
+.gallery-2 img{
+  height: 525px;
+  object-fit: cover;
+  width: 100%;
+}
+.general-header-middle .wp-block-search__input {
+  background: #EFEFEF;
+  border: none;
+}
+.general-header-middle .wp-block-search__button, .general-header-middle .wp-block-woocommerce-customer-account .label {
+  font-weight: 600;
+}
+.product-main p span {
+  font-size: 12px !important;
+  text-decoration: line-through;
+}
+
+.header-inner-menu li:last-child::after {
+  display: none;
+}
+ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu li:after{
+  display: none;
+}
+.slider-button a:hover,.theme-btn a:hover,.header-button a:hover{
+  background-color: var(--wp--preset--color--secondary) !important;
+}
+.slider-main-box{
+  position: relative;
+}
+.post-date span.dashicons{
+  color: #ffffff;
+}
+.post-date {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+}
+button.wp-block-search__button.has-text-color.has-base-color.has-background.has-contrast-background-color.has-icon.wp-element-button {
+  padding: 10px 10px;
+  background: transparent;
+}
+.wp-block-search.wp-block-search__button-only .wp-block-search__button {
+  padding: 0px !important;
+  align-items: center;
+}
+.slider-right{
+  position: relative;
+}
+.slider-right{
+  text-align: left;
+}
+.slider-right .owl-stage-outer{
+  margin-right: 0px !important;
+}
+.slider-right{
+  position: relative;
+  width: 100%;
+}
+.wp-block-image.small-img img {
+  vertical-align: middle;
+}
+.our-slider .owl-nav {
+  display: block !important;
+  position: absolute;
+  bottom: 6%;
+  text-align: right;
+  right: 5%;
+  width: 15%;
+}
+.our-slider .owl-carousel .owl-nav .owl-prev{
+  margin-left: 10px;
+}
+.our-slider .owl-carousel .owl-nav .owl-prev:hover span, .our-slider .owl-carousel .owl-nav .owl-next:hover span{
+  color: #ffffff;
+}
+.our-slider .owl-carousel .owl-nav .owl-prev:hover, .our-slider .owl-carousel .owl-nav .owl-next:hover{
+    background: var(--wp--preset--color--primary) !important;
+}
+.our-slider .owl-carousel .owl-nav .owl-prev, .our-slider .owl-carousel .owl-nav .owl-next {
+  width: 40px;
+  height: 40px;
+  background: #EFEFEF;
+  border: 0px;
+  border-radius: 30px;
+}
+.our-slider .owl-carousel .owl-nav .owl-prev {
+  border-left: 2px solid #FFFFFF12;
+}
+.our-slider .owl-carousel .owl-nav .owl-prev span, .our-slider .owl-carousel .owl-nav .owl-next span {
+  color: #000000;
+  font-size: 22px;
+  padding: 4px 8px;
+}
+.our-slider{
+  position: relative;
+}
+
+/*============== Effects Section ==============*/
+.animations-hidden-item{
+  opacity: 0;
+  transform: translateY(150px);
+  transition: all 1s;
+}
+.animations-show-item{
+  opacity: 1;
+  transform: translateY(0px);
+}
+.about-left {
+  position: relative;
+}
+.wp-site-blocks{
+  padding: 0 !important;
+}
+.wpcf7-spinner {
+  position: absolute;
+  left: 0px;
+}
+.our-blog .place-image, .our-blog .place-image img {
+  width: 100% !important;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+p span.dashicons{
+  margin-left: 10px;
+  color: var(--wp--preset--color--primary);
+}
+.social-icon-box .wp-block-social-links{
+  justify-content: flex-end !important;
+}
+.social-icon-box .wp-social-link svg{
+  font-size: 18px;
+  fill: #FAA820 !important;
+}
+.social-icon-box .wp-social-link a:hover{
+  background: var(--wp--preset--color--primary) !important;
+}
+.social-icon-box .wp-social-link a:hover svg{
+  fill: #ffffff !important;
+}
+.social-icon-box .wp-social-link a {
+  background: #ffffff !important;
+  border-radius: 30px;
+  padding: 5px !important;
+}
+.menu-box nav ul li a{
+  text-decoration: none;
+}
+
+.header-box-middle,.menu-box{
+  position: relative;
+}
+footer.wp-block-template-part .photolancer-footer-list {
+  gap: 15px;
+}
+.social-icon {
+  gap: 0px;
+}
+.head-menu-box{
+  border-bottom: 2px solid #ffffff;
+}
+.home .head-menu-box{
+  border-bottom: 0;
+}
+.social-icon li{
+  background-color:transparent !important;
+}
+.social-icon li a svg{
+  height: 20px !important;
+  width: 20px !important;
+}
+/*.wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button,*/
+.woocommerce div.product form.cart button.single_add_to_cart_button, .woocommerce div.product form.cart button[name=add-to-cart],
+.woocommerce .cart .button, .woocommerce .cart input.button,
+#add_payment_method .wc-proceed-to-checkout a.checkout-button, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button,
+.wp-block-woocommerce-checkout-actions-block .wc-block-checkout__actions_row .wc-block-components-checkout-place-order-button,
+.wc-block-components-totals-coupon__form .wc-block-components-totals-coupon__button{
+  color: #fff !important;
+}
+.wlfmc-counter-wrapper{
+  width: auto;
+}
+.wp-block-woocommerce-customer-account a span{
+  font-family: Figtree;
+  font-weight: 500;
+}
+.wp-block-woocommerce-customer-account a{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.head-menu-box ul li a:hover {
+  background: #0E2646;
+  padding: 10px;
+}
+.head-menu-box ul li a {
+  padding: 10px;
+}
+.wp-block-image img{
+  vertical-align: unset;
+}
+.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container li a {
+  padding: 10px 15px;
+  color: #000000;
+}
+.wp-site-blocks{
+	padding: 0 !important;
+}
+footer.wp-block-template-part {
+  margin-top: 0;
+}
+.comment-respond.wp-block-post-comments-form.wp-block-post-comments-form input[type=submit]{
+  color: #fff;
+}
+.sidebar-box .wp-block-search__button svg{
+  fill: #fff;
+}
+blockquote.wp-block-quote.is-layout-flow.wp-block-quote-is-layout-flow {
+    padding: 0px;
+    margin: 10px 0px;
+  }
+@media screen and (min-width: 320px) and (max-width: 599px) {
+  span.wp-block-navigation-item__label {
+    color: #000000;
+  }
+  .banner-images-main {
+    margin-top: 0px !important; 
+  }
+  .slider-box-left h2{
+    font-size: 70px !important;
+  }
+  .cart-box{
+    text-align: center;
+  }
+  .award-box {
+    position: relative;
+    bottom: 0;
+    right: 0px;
+    left: 0px;
+    margin: 0 auto;
+  }
+  .phone-number .wp-block-buttons{
+    justify-content: center !important;
+  }
+  .header-meta{
+    gap:10px !important;
+  }
+  .call-icon-main{
+    margin-top: 0px !important;
+  }
+  .wp-block-woocommerce-product-categories.wc-block-product-categories.is-dropdown{
+    margin-left: 0px !important;
+  }
+  .banner-img-1 img{
+    height: 300px;
+  }
+  .our-slider .owl-nav, .our-services .owl-nav{
+    display: none !important;
+  }
+  .project-heading{
+    text-align: center;
+  }
+  .service-content-box h4,.service-content-box{
+    text-align: right !important;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 781px) {
+  .our-services h3{
+    text-align: center !important;
+  }
+  .menu-group .wishlist-column .wp-block-column.is-vertically-aligned-center.wish-icon.is-layout-flow.wp-block-column-is-layout-flow{
+    flex-basis: 45px !important;
+  }
+  .header-inner-menu li:after {
+    display: none;
+  }
+  .eb-countdown-ht4ww.eb-cd-wrapper .eb-cd-inner{
+    display: flex;
+  }
+  .call-icon-main p{
+    padding: 5px 15px;
+  }
+  .call-icon-main ,.wish-icon{
+    display: flex;justify-content: center;
+  }
+  .fashion-images img,.banner-btn a {
+    width: 250px !important;
+    height: 250px !important;
+  }
+  .slider-text-custom,
+  .testimonial-main{
+    padding-right: 12px  !important;
+    padding-left: 12px !important;
+  }
+  .service-text h6,.service-text p{
+    text-align: center !important;
+  }
+  .product-btn{
+    justify-content: center !important;
+  }
+  .testimonial-box h5{
+    font-size: 12px !important;
+  }
+  .testimonial-box{
+    gap:10px !important;
+  }
+  .top-right p{
+    text-align: center;
+  }
+  .gtranslate_wrapper {
+    width: 100px;
+    margin: 0 auto;
+  }
+  .header-inner-menu nav{
+    justify-content: center !important;
+  }
+  .chosen-container-single .chosen-single{
+    width: 95px;
+    margin:0 auto;
+  }
+  .product-categories-button .wp-block-woocommerce-product-categories.wc-block-product-categories.is-dropdown{
+    margin-top: 10px;
+  }
+  .cart-icon{
+    text-align: center;
+  }
+  .product-categories-button select{
+    width: 100% !important; 
+  }
+  .loin-main-box{
+    justify-content: center;
+    text-align: center;
+  }
+  .wp-block-woocommerce-customer-account.alignright.has-quicksand-font-family.has-text-color.has-contrast-color.wp-elements-955f405fd74d1cbf739ad4edea9b4f46{
+    margin-right: 0px;
+  }
+  .slider-coulm{
+    max-width: 90% !important;
+  }
+  .slider-box-left{
+    text-align: center;
+  }
+  .cart-icon{
+    display: flex;justify-content: center;
+  }
+  .cart-content-box h2,.cart-content-box p{
+    text-align: center;
+  }
+  .product-categories-button .wc-block-product-categories__dropdown {
+    width: 100%;
+  }
+  .phone-number h2,.phone-number p{
+    text-align: center;
+  }
+  .slider-content-box{
+    position: relative;
+    transform: none;
+    right: 0px;
+    left: 0px;
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 30px !important;
+  }
+  .translate-text:after{
+    display: none;
+  }
+  .owl-dots {
+    right: 0px;
+    width: 90%;
+  }
+  .our-project h3{
+    text-align: center !important;
+  }
+  .header-inner-menu ul{
+    justify-content: center;
+  }
+  .header-logo .wp-block-group {
+    justify-content: center !important;
+  }
+  .short-heading-banner,.banner-heading,.slider-text{
+    text-align: center !important;
+  }
+  .slider-button{
+    justify-content: center !important;
+  }
+  .tour-box {
+    max-width: 90% !important;
+  }
+  .about-btn {
+    justify-content: center;
+  }
+  .header-logo h1 {
+    text-align: center;
+  }
+  .header-button .wp-block-buttons{
+    justify-content: center;
+  }
+  .header-box-upper{
+    position: relative;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 781px) {
+  .our-projects .owl-nav{
+    margin-top: 30px !important;
+  }
+  .slider-content-box .banner-left{
+    flex-basis: 50% !important;
+  }
+  .product-box{
+    display: grid !important;
+    grid-template-columns: auto auto !important;
+  }
+  .cart-box{
+    text-align: center !important;
+  }
+  .search-box,.cart-box,.phone-number{
+    flex-basis: 33.33% !important;
+  }
+  .about-box,.blog-box{
+    display: grid !important;
+    grid-template-columns: auto auto !important;
+    width: 100%;
+  }
+  ul.columns-3.news-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .gallery-1 img,.gallery-2 img{
+    width: 300px !important;
+    text-align: center;
+  }
+  .header-meta{
+    display: flex !important;
+    flex-wrap: nowrap !important;
+  }
+  .slider-box-left h2{
+    font-size: 150px !important;
+  }
+  .banner-images-main {
+    margin-top: -0px;
+  }
+  .gallery-1,.gallery-2{
+    text-align: center !important;
+  }
+  .award-box-left .product-btn{
+    justify-content: right !important;
+  }
+  .slider-main-box{
+    min-height: 900px !important;
+  }
+  .owl-dots {
+    right: 0px;
+    width: 68%;
+  }
+}
+@media screen and (min-width: 782px) and (max-width: 1200px) {
+  .tour-box{
+    max-width: 95% !important;
+    gap:10px;
+  }
+  .header-inner-menu ul {
+    gap:10px !important;
+  }
+  .woo-icon{
+    gap:10px;
+  }
+  footer.wp-block-template-part .wp-block-columns.is-layout-flex.wp-container-core-columns-is-layout-89f6da4a.wp-block-columns-is-layout-flex,.news-heading-box ,.news-section .wp-block-query.is-layout-flow.wp-block-query-is-layout-flow,.tour-box,.about-box,.service-group,.slider-coulm,.general-top-header .wp-block-columns.are-vertically-aligned-center.is-layout-flex.wp-container-core-columns-is-layout-28f84493.wp-block-columns-is-layout-flex,.general-header-middle .wp-block-columns.are-vertically-aligned-center.is-layout-flex.wp-container-core-columns-is-layout-28f84493.wp-block-columns-is-layout-flex{
+    max-width: 90% !important;
+  }
+  .menu-group,.header-box,.fashion-images,.slider-text-box,.service-text-main{
+    max-width: 90% !important;
+  }
+  .header-box{
+    gap:10px !important;
+  }
+  .header-inner-meta {
+    flex-basis: 45% !important;
+  }
+  .phone-number {
+    flex-basis: 80% !important;
+  }
+  .our-slider .owl-nav {
+    width: 23%;
+  }
+  .slider-text-box{
+    gap:10px !important;
+  }
+  .testimonial-box h5{
+    font-size: 10px !important;
+  }
+  .slider-text-custom p {
+    font-size: 13px !important;
+  }
+  .owl-dots {
+    position: relative;
+    width: 65%;
+  }
+  .slider-box-left h2.banner-heading{
+    font-size: 210px !important;
+    padding-top: 10px !important;
+  }
+  .fashion-images img{
+    width: 200px !important;
+    height: 150px !important;
+  }
+  .banner-btn a{
+    height: 150px !important;
+    font-size: 20px !important
+  }
+  .banner-images-main{
+    margin-top: -80px;
+  }
+  .about-box{
+    gap:10px !important;
+  }
+  .about-left p{
+    font-size: 12px !important;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 800px) {
+  .admin-bar .wp-block-navigation__responsive-container-close {
+    color: #000000;
+    top:15px;
+  }
+  .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container{
+    justify-content: center !important;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .our-projects .owl-nav {
+    top: -39%;
+  }
+  .single-image figure{
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
+  .our-projects .owl-nav {
+    top: -46%;
+  }
+  .header-inner-meta {
+    flex-basis: 28% !important;
+  }
+  .slider-box-left h2.banner-heading{
+    font-size: 280px !important;
+  }
+  .fashion-images img {
+    width: 100% !important;
+    height: 200px !important;
+  }
+  .banner-btn a {
+    height: 200px !important;
+    font-size: 25px !important;
+  }
+  .testimonial-box h5 {
+    font-size: 15px !important;
+  }
+  .header-inner-menu ul {
+    gap:10px !important;
+  }
+  .woo-icon{
+    gap:10px;
+  }
+  .owl-dots {
+    position: relative;
+    width: 50%;
+  }
+  .eb-countdown-nm5fs.eb-cd-wrapper .eb-cd-inner .box span.eb-cd-digit,
+  .eb-countdown-t3elb.eb-cd-wrapper .eb-cd-inner .box span.eb-cd-digit,
+  .eb-countdown-ht4ww.eb-cd-wrapper .eb-cd-inner .box span.eb-cd-digit {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    padding: 6px !important;
+  }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 2000px) {
+  span.eb-cd-digit{
+    font-size: 10px;
+  }
+  .eb-cd-wrapper .eb-cd-inner, .eb-cd-wrapper .eb-cd-inner {
+    gap: 4px;
+    display: flex;
+  }
+}
+/*back to top*/
+.wp-block-button.scroll-to-top .wp-block-button__link.wp-element-button {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  left: 25px;
+  bottom: 25px;
+  display: inline-block;
+  z-index: 1;
+  text-indent: -5000px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.089);
+  display: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.wp-block-button.scroll-to-top .wp-block-button__link.wp-element-button:after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  -webkit-mask-image: url(assets/images/up-arrow.svg);
+  mask-image: url(assets/images/up-arrow.svg);
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  top: 0;
+}
+
+/* Blog Section */
+/*.news-section .news-box .wp-block-post-excerpt__excerpt{
+  color: #000000;
+}*/
+.news-heading-box .news-small-title{
+  width: max-content;
+}
+.news-section .news-heading-box{
+  gap: 0;
+}
+.news-section .news-box .wp-block-post:hover .wp-block-post-title a{
+  color: var(--wp--preset--color--primary);
+}
+.news-section .news-heading-box{
+  gap: 0;
+}
+.recent-btn a {
+  background: var(--wp--preset--color--primary);
+  padding: 10px 12px;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.recent-btn a:hover{
+  background: #000;
+}
