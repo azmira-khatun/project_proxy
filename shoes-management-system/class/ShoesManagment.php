@@ -106,7 +106,7 @@ class ShoesManagement
 
         $table_prefix = $wpdb->prefix; // wp_, tbl_
 
-        $tableSql = 'CREATE TABLE `' . $table_prefix . 'shoes_system` (
+        $tableSql = 'CREATE TABLE`' . $table_prefix . 'shoes_system` (
       `id` int NOT NULL AUTO_INCREMENT,
       `name` varchar(120) NOT NULL,
       `author` varchar(120) NOT NULL,
