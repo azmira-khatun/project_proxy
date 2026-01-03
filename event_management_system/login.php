@@ -48,13 +48,13 @@ if (isset($_POST["btnLogin"])) {
       justify-content: center;
       align-items: center;
       background: #f5f5f5;
-      /* Plain light background */
+      /* Light background */
     }
 
     .login-card {
       border-radius: 15px;
-      background: #ffffff;
-      /* White card */
+      background: #e8f0fe;
+      /* Light blue-ish card color */
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       padding: 35px 30px;
     }
@@ -66,13 +66,14 @@ if (isset($_POST["btnLogin"])) {
     }
 
     .login-card p {
-      color: #666;
+      color: #555;
       margin-bottom: 30px;
     }
 
     .form-control {
       border-radius: 10px;
-      background: #f0f0f0;
+      background: #f0f4ff;
+      /* Very light input background */
       color: #333;
       padding: 12px;
     }
@@ -82,7 +83,8 @@ if (isset($_POST["btnLogin"])) {
     }
 
     .form-control:focus {
-      background: #e6e6e6;
+      background: #e0e8ff;
+      /* Slightly darker on focus */
       color: #333;
       box-shadow: none;
     }
@@ -92,7 +94,7 @@ if (isset($_POST["btnLogin"])) {
       font-weight: 600;
       padding: 12px;
       background: #0d6efd;
-      /* Bootstrap primary blue */
+      /* Primary blue */
       color: #fff;
       transition: all 0.3s ease;
     }
