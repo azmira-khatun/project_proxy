@@ -35,7 +35,7 @@ if (isset($_POST["btnLogin"])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -47,63 +47,73 @@ if (isset($_POST["btnLogin"])) {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: #f5f5f5;
+      /* Plain light background */
     }
 
     .login-card {
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-      padding: 30px;
+      border-radius: 15px;
+      background: #ffffff;
+      /* White card */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 35px 30px;
     }
 
     .login-card h3 {
-      color: #fff;
-      font-weight: 600;
-      margin-bottom: 15px;
+      color: #333;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
 
     .login-card p {
-      color: rgba(255, 255, 255, 0.8);
+      color: #666;
+      margin-bottom: 30px;
     }
 
     .form-control {
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
+      border-radius: 10px;
+      background: #f0f0f0;
+      color: #333;
+      padding: 12px;
     }
 
     .form-control::placeholder {
-      color: rgba(255, 255, 255, 0.7);
+      color: #999;
     }
 
     .form-control:focus {
-      background: rgba(255, 255, 255, 0.3);
-      color: #fff;
+      background: #e6e6e6;
+      color: #333;
       box-shadow: none;
     }
 
     .btn-login {
-      border-radius: 12px;
+      border-radius: 10px;
       font-weight: 600;
       padding: 12px;
+      background: #0d6efd;
+      /* Bootstrap primary blue */
+      color: #fff;
       transition: all 0.3s ease;
     }
 
     .btn-login:hover {
-      background: #fff;
-      color: #764ba2;
+      background: #0b5ed7;
+      /* Darker blue on hover */
       transform: translateY(-2px);
     }
 
     a {
-      color: #fff;
+      color: #0d6efd;
     }
 
     a:hover {
       text-decoration: none;
-      color: #f0f0f0;
+      color: #0b5ed7;
+    }
+
+    .form-check-label {
+      color: #333;
     }
   </style>
 </head>
@@ -113,16 +123,14 @@ if (isset($_POST["btnLogin"])) {
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-5 col-lg-4">
-
         <div class="login-card">
 
           <h3 class="text-center">Welcome Back</h3>
           <p class="text-center">Sign in to start your session</p>
 
-          <!-- Error -->
-          <?php if ($error != ""): ?>
+            <?php if ($error != ""): ?>
             <div class="alert alert-danger text-center"><?php echo $error; ?></div>
-          <?php endif; ?>
+            <?php endif; ?>
 
           <form method="post">
 
@@ -139,22 +147,21 @@ if (isset($_POST["btnLogin"])) {
             <div class="d-flex justify-content-between align-items-center mb-3">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="remember">
-                <label class="form-check-label text-white" for="remember">Remember Me</label>
+                <label class="form-check-label" for="remember">Remember Me</label>
               </div>
               <a href="#" class="small">Forgot?</a>
             </div>
 
-            <button type="submit" name="btnLogin" class="btn btn-primary w-100 btn-login">Sign In</button>
+            <button type="submit" name="btnLogin" class="btn w-100 btn-login">Sign In</button>
           </form>
 
-          <hr class="my-4" style="border-top:1px solid rgba(255,255,255,0.3);">
+          <hr class="my-4">
 
           <p class="text-center mb-0">
-            Don’t have an account? <a href="index.php" class="fw-semibold">Register</a>
+            Don’t have an account? <a href="index.php">Register</a>
           </p>
 
         </div>
-
       </div>
     </div>
   </div>
