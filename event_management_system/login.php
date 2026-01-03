@@ -1,100 +1,165 @@
 <?php
+session_start();
 include("config.php");
-// session_start();
 
-if (isset($_POST['submit'])) {
-  $email = $_POST['email'];
-  $password = $_POST['password'];
+$error = "";
 
-  // database থেকে user check
-  $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-  $result = $conn->query($sql);
+if (isset($_POST["btnLogin"])) {
+  $email = trim($_POST["email"]);
+  $password = trim($_POST["password"]);
+
+  $stmt = $conn->prepare("SELECT id, firstname, email, password FROM users WHERE email=? AND password=?");
+  $stmt->bind_param("ss", $email, $password);
+  $stmt->execute();
+  $result = $stmt->get_result();
 
   if ($result->num_rows > 0) {
-    // login success হলে session set
     $row = $result->fetch_assoc();
-    $_SESSION['user_id'] = $row['id'];
-    $_SESSION['firstname'] = $row['firstname'];
 
-    // redirect after login
-    header("Location: index.php");
+    $_SESSION["s_userid"] = $row["id"];
+    $_SESSION["s_email"] = $row["email"];
+    $_SESSION["s_firstname"] = $row["firstname"];
+
+    header("Location: home.php");
     exit();
   } else {
-    echo "<script>alert('Invalid Email or Password');</script>";
+    $error = "Incorrect email or password";
   }
-
-  $conn->close();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Login Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="dist/plugins/fontawesome-free/css/all.min.css">
-  <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="dist/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/dist/css/adminlte.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    .login-card {
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+    }
+
+    .login-card h3 {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .login-card p {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .form-control {
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .form-control:focus {
+      background: rgba(255, 255, 255, 0.3);
+      color: #fff;
+      box-shadow: none;
+    }
+
+    .btn-login {
+      border-radius: 12px;
+      font-weight: 600;
+      padding: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-login:hover {
+      background: #fff;
+      color: #764ba2;
+      transform: translateY(-2px);
+    }
+
+    a {
+      color: #fff;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: #f0f0f0;
+    }
+  </style>
 </head>
 
-<body class="hold-transition login-page">
+<body>
 
-  <div class="login-box">
-    <div class="login-logo">
-      <a href="#"><b>Login</b></a>
-    </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5 col-lg-4">
 
-    <div class="card">
-      <div class="card-body login-card-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <div class="login-card">
 
-        <form action="#" method="post">
-          <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email" name="email" required>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
+          <h3 class="text-center">Welcome Back</h3>
+          <p class="text-center">Sign in to start your session</p>
+
+          <!-- Error -->
+          <?php if ($error != ""): ?>
+            <div class="alert alert-danger text-center"><?php echo $error; ?></div>
+          <?php endif; ?>
+
+          <form method="post">
+
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+              <label for="email"><i class="bi bi-envelope"></i> Email</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+              <label for="password"><i class="bi bi-lock"></i> Password</label>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="remember">
+                <label class="form-check-label text-white" for="remember">Remember Me</label>
               </div>
+              <a href="#" class="small">Forgot?</a>
             </div>
-          </div>
-          <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password" name="password" required>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-lock"></span>
-              </div>
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="col-4">
-              <button type="submit" name="submit" class="btn btn-primary btn-block">Sign In</button>
-            </div>
-          </div>
-        </form>
+            <button type="submit" name="btnLogin" class="btn btn-primary w-100 btn-login">Sign In</button>
+          </form>
 
-        <p class="mb-0">
-          <a href="register.php" class="text-center">Register a new membership</a>
-        </p>
+          <hr class="my-4" style="border-top:1px solid rgba(255,255,255,0.3);">
+
+          <p class="text-center mb-0">
+            Don’t have an account? <a href="index.php" class="fw-semibold">Register</a>
+          </p>
+
+        </div>
+
       </div>
     </div>
   </div>
 
-  <!-- jQuery -->
-  <script src="dist/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="dist/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="dist/dist/js/adminlte.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

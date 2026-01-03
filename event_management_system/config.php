@@ -9,20 +9,20 @@ if (session_status() == PHP_SESSION_NONE) {
 
 <?php
 
-    $servername = "localhost";
+$servername = "localhost";
 
-    $username = "root";
+$username = "root";
 
-    $password = "";
+$password = "";
 
-    $dbname = "event-ms"; 
+$dbname = "php_project";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    if($conn->connect_error) {
+if ($conn->connect_error) {
 
-        die("Connection Failed" . $conn->connect_error);
+    die("Connection Failed" . $conn->connect_error);
 
-    }
+}
 
 ?>
